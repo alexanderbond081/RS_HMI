@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>rs_hmi_logo.png</file>
+        <file>qt_logo_green_128x128px.png</file>
+        <file>Built_with_Qt_RGB_logo.png</file>
+    </qresource>
+</RCC>
