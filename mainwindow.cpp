@@ -1,7 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2018 Aliaksandr Bandarenka, PTI NAS Belarus
-** Contact: sashka3001@gmail.com
+** Copyright (C) 2018 Aliaksandr Bandarenka
+** Contact: alexander.bond081@gmail.com
 **
 ** This file is part of the RS_HMI.
 **
@@ -34,7 +34,6 @@
 #include "ui_mainwindow.h"
 
 #include "fatekcommrs.h"
-#include "spinboxitemdelegate.h"
 #include "resources.h"
 #include "plcregister.h"
 

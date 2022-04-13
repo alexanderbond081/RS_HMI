@@ -1,7 +1,7 @@
 /****************************************************************************
 **
-** Copyright (C) 2018 Aliaksandr Bandarenka, PTI NAS Belarus
-** Contact: sashka3001@gmail.com
+** Copyright (C) 2018 Aliaksandr Bandarenka
+** Contact: alexander.bond081@gmail.com
 **
 ** This file is part of the RS_HMI.
 **
@@ -24,7 +24,6 @@
 #include <QtSerialPort/QSerialPort>
 #include <QtSerialPort/QSerialPortInfo>
 #include "mainwindow.h"
-#include "dialog.h"
 
 #include "fatekcommrs.h"
 #include "datacollection.h"

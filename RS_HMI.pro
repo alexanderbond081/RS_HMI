@@ -69,7 +69,6 @@ FORMS    += mainwindow.ui \
     commwindow.ui
 
 OTHER_FILES += \
-    viewData.xml
 
 RESOURCES += \
     icons.qrc
