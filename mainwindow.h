@@ -73,6 +73,7 @@ public:
 
 private slots:
     void showCommWindow();
+    void toggleFullscreen();
     void showAboutWindow();
     void statusUpdate();
 

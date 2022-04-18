@@ -28,6 +28,7 @@
 #include <QSettings>
 
 bool Resources::TOUCH_SCREEN=false;
+bool Resources::FULL_SCREEN=true;
 bool Resources::EXPAND_FLAGBOXLIST=false;
 QString Resources::LANGUAGE;
 QMap<QString, QString> Resources::dictionary;
@@ -36,6 +37,7 @@ void Resources::loadSettings()
 {
     QSettings resources(Consts::workDirPath+"/settings.cfg",QSettings::NativeFormat);
     TOUCH_SCREEN = resources.value("useTouchScreen").toBool();
+    FULL_SCREEN = resources.value("startFullScreen").toBool();
     LANGUAGE = resources.value("language").toString();
 }
 

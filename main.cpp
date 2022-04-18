@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     QSharedMemory titleMem;
 
-
+    if(Resources::FULL_SCREEN) w.setWindowState(Qt::WindowFullScreen | Qt::WindowMaximized);
     dataCollector.setDataCollection(&registerData); // говорим модулю связи, откуда брать данные (модель)
     w.setCommunicator(&dataCollector); // говорим главному окну, кто будет добывать данные из контроллера
     hmi.setRegisterData(&registerData); // связываем модель и представление модели

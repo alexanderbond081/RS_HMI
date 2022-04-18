@@ -29,6 +29,7 @@
 class Resources{
 public:
     static bool TOUCH_SCREEN;
+    static bool FULL_SCREEN;
     static void loadSettings();
     static bool EXPAND_FLAGBOXLIST; // попробуем... это конечно кастылем пахнет.
     static QString LANGUAGE; // язык интерфейса, указанный в файле настроек.

@@ -81,13 +81,16 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     QObject::connect(ui->actionOpenCommSettings, &QAction::triggered, this, &MainWindow::showCommWindow);
+    QObject::connect(ui->actionFullScreen, &QAction::triggered, this, &MainWindow::toggleFullscreen);
     QObject::connect(ui->actionAbout, &QAction::triggered, this, &MainWindow::showAboutWindow);
 
     // внедряем перевод в интерфейс:
     ui->menuSettings->setTitle(Resources::translate("settings"));
-    ui->menuSettings->actions().first()->setText(Resources::translate("connection"));
+
+    ui->menuSettings->actions().at(0)->setText(Resources::translate("connection"));
+    ui->menuSettings->actions().at(2)->setText(Resources::translate("fullscreen"));
     ui->menuAbout->setTitle(Resources::translate("info"));
-    ui->menuAbout->actions().first()->setText(Resources::translate("about menu"));
+    ui->menuAbout->actions().at(0)->setText(Resources::translate("about menu"));
 
     ui->statusBar->addWidget(new QLabel(Resources::translate("device")+":", this));
     ui->statusBar->addWidget(&portName);
@@ -177,6 +180,11 @@ void MainWindow::showCommWindow()
         commwindow.raise();
     }
     else commwindow.show();
+}
+
+void MainWindow::toggleFullscreen()
+{
+    this->setWindowState(this->windowState()^Qt::WindowFullScreen);
 }
 
 void MainWindow::showAboutWindow()

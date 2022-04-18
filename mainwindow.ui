@@ -82,6 +82,8 @@
      <string>Настройки</string>
     </property>
     <addaction name="actionOpenCommSettings"/>
+    <addaction name="separator"/>
+    <addaction name="actionFullScreen"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -123,6 +125,11 @@
   <action name="actionAbout">
    <property name="text">
     <string>О программе</string>
+   </property>
+  </action>
+  <action name="actionFullScreen">
+   <property name="text">
+    <string>Развернуть на весь экран</string>
    </property>
   </action>
  </widget>
