@@ -63,7 +63,7 @@ void RecipeStorage::onTimer()
 
     // а теперь сохраняем
     savetimer.stop();
-    qDebug()<<savefilename;
+    //qDebug()<<savefilename;
     //QMap<PlcRegister, int> data;
     QFile *file = new QFile(savefilename);
     if(!file->open(QIODevice::WriteOnly | QIODevice::Text)){
@@ -78,6 +78,9 @@ void RecipeStorage::onTimer()
     }
     file->close();
     delete file;
+
+    Resources::log("save recipe "+savefilename);
+
     emit saveFinish();
 }
 
@@ -133,6 +136,8 @@ void RecipeStorage::load()
     }
     collection->submitRegisterValues(data);
     path=filename;
+
+    Resources::log("load recipe "+filename);
 }
 
 

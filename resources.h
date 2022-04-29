@@ -38,6 +38,7 @@ public:
     static QString translate(QString key){ // перевод интерфейса по ключу, если значение не найдено, то возвращает ключ
         return dictionary.value(key,"#"+key);
     }
+    static void log(QString msg);
 };
 
 class Consts{

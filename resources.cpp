@@ -26,6 +26,7 @@
 #include <QDir>
 #include <QDebug>
 #include <QSettings>
+#include <QDateTime>
 
 bool Resources::TOUCH_SCREEN=false;
 bool Resources::FULL_SCREEN=false;
@@ -68,6 +69,36 @@ void Resources::loadDictionary(QString language)
     else qDebug()<<"can't open translation file "<<filename;
 
     //qDebug()<<"dictionary lines count "<<dictionary.count();
+}
+
+void Resources::log(QString msg)
+{
+    /*  если файл не существует, то создаём его
+        если же существует, то просто записываем туда */
+
+    QString path=Consts::workDirPath+"/GeneralLog";
+    QString filename = path+"/"+QDate::currentDate().toString("MM.yyyy")+".txt";
+    QFile *file = new QFile(filename);
+    if(!file->exists()){
+        QDir dir;
+        dir.mkpath(path);
+        if(!file->open(QIODevice::WriteOnly | QIODevice::Text)){
+            qDebug()<<"Can't open log file "+filename;//"Ошибка открытия файла для логирования";
+            return;
+        }
+    }
+    else{
+        if(!file->open(QIODevice::Append | QIODevice::Text)){
+            qDebug()<<"Can't open log file "+filename;//"Ошибка открытия файла для логирования";
+            return;
+        }
+    }
+    QTextStream textstream(file);
+    QString daytime=QDateTime::currentDateTime().toString("dd.MM.yyyy HH:mm:ss");
+    textstream<<daytime+"\t"+msg+"\n";
+
+    file->close();
+    delete file;
 }
 
 const QString Consts::upDirectory = "..";

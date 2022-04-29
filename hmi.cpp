@@ -283,6 +283,10 @@ void Hmi::xmlStartProgramHMI()
         onViewCollectionTabUpdated(); // имитируем сигнал обновления, чтобы сформировать набор регистров начальной страницы
         if(hmiSecurity)hmiSecurity->resetAccess(); // сбрасываем доступ к виджетам (чтобы спрятать тех кто не должен быть виден).
     }
+
+    //qDebug()<<Consts::workDirPath+"/general_log/"+QDate::currentDate().toString("MM.yyyy")+".txt";
+    //qDebug()<<QDateTime::currentDateTime().toString("dd.MM.yyyy HH:mm:ss");
+    Resources::log("HMI start "+Consts::programTag);
 }
 
 void Hmi::xmlCommonAttributes(ViewElement *element)
